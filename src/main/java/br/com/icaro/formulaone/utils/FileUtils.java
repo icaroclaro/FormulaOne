@@ -31,7 +31,7 @@ public class FileUtils {
 
         while (br.ready()) {
             String linha = br.readLine();
-            voltasPilotos.add(adcionaVoltaPiloto(linha));
+            voltasPilotos.add(adicionaVoltaPiloto(linha));
         }
         br.close();
         LOGGER.info("Finalizando a leitura do arquivo");
@@ -39,8 +39,8 @@ public class FileUtils {
 
     }
 
-    private  static VoltaPiloto adcionaVoltaPiloto(String linha) throws ParseException {
-        LOGGER.info("Iniciando o preenchimento do Objeto VoltaPiloto");
+    private  static VoltaPiloto adicionaVoltaPiloto(String linha) throws ParseException {
+
         VoltaPiloto voltaPiloto = new VoltaPiloto();
         String[] splited = linha.split("\\s+");
 
@@ -51,7 +51,7 @@ public class FileUtils {
 
         voltaPiloto.setTempoVolta(DateUtils.minutoEmMillisecond(splited[5]));
         voltaPiloto.setVelocidadeMediaVolta(Float.parseFloat(splited[6].replace(",", ".")));
-        LOGGER.info("Finalizando o preenchimento do Objeto VoltaPiloto");
+
         return voltaPiloto;
 
     }

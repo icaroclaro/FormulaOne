@@ -4,6 +4,7 @@ import br.com.icaro.formulaone.model.Posicoes;
 import br.com.icaro.formulaone.model.VoltaPiloto;
 import br.com.icaro.formulaone.utils.DateUtils;
 import br.com.icaro.formulaone.utils.FileUtils;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.logging.Level;
 
+@Service
 public class CalculaResutadoCorridaServiceImpl implements CalcularResultadoCorridaSevice {
     private static final Logger LOGGER = Logger.getLogger(FileUtils.class.getName());
 
