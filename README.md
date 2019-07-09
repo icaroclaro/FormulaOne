@@ -15,27 +15,40 @@ Foram identificadas duas possibilidades:
 Não foi utilizado o campo HORA pois inferindo que ele estava desordenado poderia ter ocorrido algum problema durante o registro destes horários.
 Foi utilizado o menor tempo da soma de todos os tempos de voltas do corredor
 
+### Pré-requisitos
+
+Para executar o projeto será necessário possuir o Maven e JDK posterior ao 8(o projeto foi construido com JDK12 no IntelliJ).
+
+
 ## Começar
 
+### Windows
 Ao baixar o projeto, no OS Windows, executar o arquivo scriptToBuildAndRun.cmd localizado na pasta raiz do projeto.
 Este script tem por objetivo: Compilar o projeto, executar os casos de teste e por fim, executar a aplicação.
-Caso tenha algum problema com o script, abra o Command Line do windows e execute os comandos abaixo dentro da pasta do projeto:
+Caso tenha algum problema com o script, abra o Command Line do windows e execute os comandos abaixo.
 
+Na pasta do projeto:
 ```
 mvnw package
 
-pause
 
-java -cp target/formulaone-0.0.1-SNAPSHOT.jar
+java -jar target/formulaone-0.0.1-SNAPSHOT.jar
 
-pause
 ```
 
-### Pré-requisitos
+### Linux
 
-O Projeto foi construido utilizando JDK12, portanto para realizar alguma alteraçao no projeto 
-é recomendado a utilização desta versão.
-Caso utilize versões anteriore, será necessário alterar o JDK da versão utilizada nas configurações do projeto.
+Na pasta do projeto:
+
+```
+mvn package
+
+java -jar target/formulaone-0.0.1-SNAPSHOT.jar
+
+```
+
+## Testes de execução do projeto
+O Projeto foi testado com OS Windows 10(JDK12 e Maven) e Linux Debian(JDK8 e Maven 3.x)
 
 ## Rodando os testes
 
