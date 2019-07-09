@@ -15,7 +15,7 @@ Foram identificadas duas possibilidades:
 Não foi utilizado o campo HORA pois inferindo que ele estava desordenado poderia ter ocorrido algum problema durante o registro destes horários.
 Foi utilizado o menor tempo da soma de todos os tempos de voltas do corredor por acreditar que a soma destes valores resultariam consequentemente
 no corredor que iria passar primeiro pela linha de chegada.
-É possível que isso não seja uma verdade e o correto fosse ter utilizado do campo HORA, visto que a menor HORA marcada na quarta volta, fosse 
+É possível que isso não seja uma verdade e o correto fosse ter utilizado do campo HORA, visto que a menor HORA marcada na quarta volta fosse 
 determinante para decidir o vencedor
 #### -------------------------------Fim NOTA---------------------------------
 
