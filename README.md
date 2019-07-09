@@ -68,6 +68,14 @@ deveRetornarTempoEmMilissegundos() - Testa o metodo que faz conversão de Tempo(
 deveRetornarTempoEmMinutos()- Testa o metodo que faz conversão de  milissegundos em Tempo(mm:ss.SSS)
 ```
 
+## Possiveis ajustes de configuracao
+Quando o projeto foi baixado no Debian, os arquivos FormulaOneApplicationTests.java e FormulaOneApplication.java estavam com os seguintes nomes:
+```
+FormulaoneApplicationTests.java
+FormulaoneApplication.java
+```
+(com o one minusculo). Foi necessário alterar o do arquivo para One(com o O maiusculo).
+
 ## Authors
 
 * **Ícaro Claro** - *Initial work* - [PurpleBooth](https://github.com/icaroclaro)
