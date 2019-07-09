@@ -80,6 +80,6 @@ FormulaoneApplication.java
 ```
 (com o one minusculo). Foi necessário alterar o do arquivo para One(com o O maiusculo).
 
-## Authors
+## Autor
 
 * **Ícaro Claro** - [Projetos de Estudo](https://github.com/icaroclaro)
