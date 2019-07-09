@@ -85,35 +85,37 @@ public class CalculaResutadoCorridaServiceImpl implements CalcularResultadoCorri
     }
 
     private void imprimirEstatisticaDaCorrida(List<Posicoes> posicoesOrdenadas) {
-        System.out.print(String.format("%15s", "Posicao Piloto"));
-        System.out.print(String.format("%12s", "Cod.Piloto"));
-        System.out.print(" - ");
-        System.out.print(String.format("%-20s", "Nome Piloto"));
-        System.out.print(String.format("%18s", "Voltas Completadas"));
-        System.out.print(String.format("%15s", "Melhor Volta"));
-        System.out.print(String.format("%20s", "Tempo Total Piloto"));
-        System.out.print(String.format("%20s", "Velocidade Media"));
-        System.out.print(String.format("%19s", "Tempo apos vencedor"));
+        System.out.print(String.format("%4s", "Pos."));
+        System.out.print(String.format("%5s", "Cod."));
+        System.out.print("-");
+        System.out.print(String.format("%-14s", "Nome Piloto"));
+        System.out.print(String.format("%11s", "Tot Voltas"));
+        System.out.print(String.format("%13s", "Melhor Volta"));
+        System.out.print(String.format("%11s", "Tempo Tot"));
+        System.out.print(String.format("%7s", "V. Med"));
+        System.out.print(String.format("%12s", "Apos Venc"));
         System.out.println();
 
         for(int i = 0; i < posicoesOrdenadas.size() ; i++){
-            System.out.print(String.format("%15d", i+1));
-            System.out.print(String.format("%12d", posicoesOrdenadas.get(i).getCodigoPiloto()));
-            System.out.print(" - ");
-            System.out.print(String.format("%-20s", posicoesOrdenadas.get(i).getNomePiloto()));
-            System.out.print(String.format("%18s", posicoesOrdenadas.get(i).getQtdVoltasCompletadas()));
-            System.out.print(String.format("%15s", posicoesOrdenadas.get(i).getNumeroMelhorVolta() + "-" + posicoesOrdenadas.get(i).getTempoMelhorVolta()));
-            System.out.print(String.format("%20s", posicoesOrdenadas.get(i).getTempoTotalCorrida()));
-            System.out.print(String.format("%20s", posicoesOrdenadas.get(i).getVelocidadeMediaVolta()));
-            System.out.print(String.format("%19s", posicoesOrdenadas.get(i).getTempoAposVencedor()));
+            System.out.print(String.format("%4d", i+1));
+            System.out.print(String.format("%5d", posicoesOrdenadas.get(i).getCodigoPiloto()));
+            System.out.print("-");
+            System.out.print(String.format("%-14s", posicoesOrdenadas.get(i).getNomePiloto()));
+            System.out.print(String.format("%11s", posicoesOrdenadas.get(i).getQtdVoltasCompletadas()));
+            System.out.print(String.format("%13s", posicoesOrdenadas.get(i).getNumeroMelhorVolta() + "-" + posicoesOrdenadas.get(i).getTempoMelhorVolta()));
+            System.out.print(String.format("%11s", posicoesOrdenadas.get(i).getTempoTotalCorrida()));
+            System.out.print(String.format("%7s", posicoesOrdenadas.get(i).getVelocidadeMediaVolta()));
+            System.out.print(String.format("%12s", posicoesOrdenadas.get(i).getTempoAposVencedor()));
             System.out.println();
         }
     }
 
     private void imprimirMelhorVoltaDaCorrida(VoltaPiloto melhorVoltaCorrida) {
-        System.out.println(String.format("%15s", "Melhor Volta da Corrida"));
+        System.out.println("*****************************");
+        System.out.println("***Melhor Volta da Corrida***");
+        System.out.println("*****************************");
         System.out.print(String.format("%12s", "Cod.Piloto"));
-        System.out.print(" - ");
+        System.out.print("-");
         System.out.print(String.format("%-20s", "Nome Piloto"));
         System.out.print(String.format("%-20s", "Tempo da volta"));
         System.out.println();
@@ -123,7 +125,7 @@ public class CalculaResutadoCorridaServiceImpl implements CalcularResultadoCorri
         System.out.print(String.format("%-20s", DateUtils.millisecondEmMinuto(melhorVoltaCorrida.getTempoVolta(), "mm:ss.SSS")));
         System.out.println();
 
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------");
     }
 
     private void preencherTempoDeChegadaAposVencedor(int quantidadeVoltasCorrida, Long horaDeChegadaDoPrimeiro, List<Posicoes> posicoesOrdenadas) {
