@@ -82,4 +82,4 @@ FormulaoneApplication.java
 
 ## Authors
 
-* **Ícaro Claro** - *Initial work* - [PurpleBooth](https://github.com/icaroclaro)
+* **Ícaro Claro** - [Projetos de Estudo](https://github.com/icaroclaro)
