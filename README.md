@@ -6,7 +6,7 @@ Projeto para Calcular e Ordenar informações obtidas em uma corrida de Formula 
 Este projeto tem por objetivo, extrair informações de um arquivo de log e gerar estatística referente a uma corrida
 de formula 1 contendo 4 voltas.
 
-## -----------------------------------------------NOTA------------------------------------------------------------------------
+#### -------------------------------NOTA------------------------------------
 Durante o desenvolvimento da aplicação surgiu uma dúvida referênte ao calculo para se obter o vencedor.
 Foram identificadas duas possibilidades:
 - Utilizar o campo HORA, como sendo a hora do registro da marcação. Neste caso utilizariamos o campo HORA com a marcação da ultima volta;
@@ -17,6 +17,7 @@ Foi utilizado o menor tempo da soma de todos os tempos de voltas do corredor por
 no corredor que iria passar primeiro pela linha de chegada.
 É possível que isso não seja uma verdade e o correto fosse ter utilizado do campo HORA, visto que a menor HORA marcada na quarta volta, fosse 
 determinante para decidir o vencedor
+#### -------------------------------Fim NOTA---------------------------------
 
 ### Pré-requisitos
 
