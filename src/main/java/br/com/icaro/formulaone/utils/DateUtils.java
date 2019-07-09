@@ -13,20 +13,25 @@ import java.util.logging.Logger;
 public class DateUtils {
 	private static final Logger LOGGER = Logger.getLogger(FileUtils.class.getName());
 
-	public static Long minutoEmMillisecond(String tempoVolta) throws ParseException {
+	public static Long minutoEmMillisecond(String tempoVolta, String formato) {
 
-		Date data = new SimpleDateFormat("mm:ss.SSS").parse(tempoVolta);
+		Date data = null;
+		try {
+			data = new SimpleDateFormat(formato).parse(tempoVolta);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 
 		return data.getTime();
 
 	}
 	
-	public static String millisecondEmMinuto(Long millisecondVolta) {
-		LocalDateTime melhorVoltaMinutos =
+	public static String millisecondEmMinuto(Long millisecondVolta, String formato) {
+		LocalDateTime tempoEmMilisegundos =
 				Instant.ofEpochMilli(millisecondVolta).atZone(ZoneId.systemDefault()).toLocalDateTime();
 
-		return melhorVoltaMinutos
-				.format(DateTimeFormatter.ofPattern("mm:ss.SSS"));
+		return tempoEmMilisegundos
+				.format(DateTimeFormatter.ofPattern(formato));
 
 	}
 	

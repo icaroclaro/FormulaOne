@@ -2,6 +2,7 @@ package br.com.icaro.formulaone.model;
 
 public class Posicoes {
 
+    private long horaChegada;
     private int posicaoChegada;
     private int codigoPiloto;
     private String nomePiloto;
@@ -10,6 +11,7 @@ public class Posicoes {
     private String tempoMelhorVolta;
     private String tempoTotalCorrida;
     private String velocidadeMediaVolta;
+    private String tempoAposVencedor;
 
 
     public int getPosicaoChegada() {
@@ -86,7 +88,24 @@ public class Posicoes {
                 "  Melhor Volta = " + numeroMelhorVolta +
                         " - " + tempoMelhorVolta +
                         "  Tempo Total Corrida = " + tempoTotalCorrida +
-                "  Velocidade Media  = " + velocidadeMediaVolta
+                "  Velocidade Media  = " + velocidadeMediaVolta +
+                        "Tempo apos o Vencedor: " + tempoAposVencedor
                 ;
+    }
+
+    public long getHoraChegada() {
+        return horaChegada;
+    }
+
+    public void setHoraChegada(long horaChegada) {
+        this.horaChegada = horaChegada;
+    }
+
+    public String getTempoAposVencedor() {
+        return tempoAposVencedor;
+    }
+
+    public void setTempoAposVencedor(String tempoAposVencedor) {
+        this.tempoAposVencedor = tempoAposVencedor;
     }
 }

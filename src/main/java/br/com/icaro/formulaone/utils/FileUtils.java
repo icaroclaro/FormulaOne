@@ -7,13 +7,15 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class FileUtils {
     private static final Logger LOGGER = Logger.getLogger(FileUtils.class.getName());
 
-    public static List<VoltaPiloto> lerArquivo(File arquivo) throws IOException, ParseException {
+    public static List<VoltaPiloto> lerArquivoCorrida(File arquivo) throws IOException, ParseException {
 
         LOGGER.info("Iniciando a leitura do arquivo");
+
         List<VoltaPiloto> voltasPilotos = new ArrayList<>();
 
         if (!arquivo.exists()) {
@@ -35,6 +37,8 @@ public class FileUtils {
         }
         br.close();
         LOGGER.info("Finalizando a leitura do arquivo");
+
+
         return voltasPilotos;
 
     }
@@ -44,12 +48,11 @@ public class FileUtils {
         VoltaPiloto voltaPiloto = new VoltaPiloto();
         String[] splited = linha.split("\\s+");
 
-        voltaPiloto.setHoraRegistradaVolta(splited[0]);
         voltaPiloto.setCodigoPiloto(Integer.parseInt(splited[1]));
         voltaPiloto.setNomePiloto(splited[3]);
         voltaPiloto.setNumeroVolta(Integer.parseInt(splited[4]));
 
-        voltaPiloto.setTempoVolta(DateUtils.minutoEmMillisecond(splited[5]));
+        voltaPiloto.setTempoVolta(DateUtils.minutoEmMillisecond(splited[5], "mm:ss.SSS"));
         voltaPiloto.setVelocidadeMediaVolta(Float.parseFloat(splited[6].replace(",", ".")));
 
         return voltaPiloto;

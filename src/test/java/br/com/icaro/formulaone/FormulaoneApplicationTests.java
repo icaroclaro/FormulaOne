@@ -23,7 +23,7 @@ public class FormulaOneApplicationTests {
     CalculaResutadoCorridaServiceImpl calculaResutadoCorridaServiceImpl = new CalculaResutadoCorridaServiceImpl();
 
     @Test
-    public void calcularResultadoCorrida() {
+    public void deveCalcularResultadoCorrida() {
         calculaResutadoCorridaServiceImpl.calcularResultadoCorrida("log.txt");
         assert true;
     }
@@ -33,7 +33,7 @@ public class FormulaOneApplicationTests {
 
         File diretorio = new File("log.txt");
 
-        List<VoltaPiloto> voltaPilotos = FileUtils.lerArquivo(diretorio);
+        List<VoltaPiloto> voltaPilotos = FileUtils.lerArquivoCorrida(diretorio);
 
         assertEquals("arquivos encontrados", 23, voltaPilotos.size());
     }
@@ -43,7 +43,7 @@ public class FormulaOneApplicationTests {
 
         File diretorio = new File("");
 
-        FileUtils.lerArquivo(diretorio);
+        FileUtils.lerArquivoCorrida(diretorio);
     }
 
     @Test(expected = Exception.class)
@@ -59,14 +59,14 @@ public class FormulaOneApplicationTests {
 
     @Test
     public void deveRetornarTempoEmMilissegundos() throws ParseException {
-        Long milisegundosRet = DateUtils.minutoEmMillisecond("1:02.852");
+        Long milisegundosRet = DateUtils.minutoEmMillisecond("1:02.852", "mm:ss.SSS");
         Long milisegundos = 10862852L;
         assertEquals("Conversão de Minuto não efetuada", milisegundos, milisegundosRet);
     }
 
     @Test
     public void deveRetornarTempoEmMinutos() {
-        String timeRet = DateUtils.millisecondEmMinuto(10862852L);
+        String timeRet = DateUtils.millisecondEmMinuto(10862852L, "mm:ss.SSS");
         String time = "01:02.852";
         assertEquals("Conversão de Milisegundos não efetuada", time, timeRet);
     }

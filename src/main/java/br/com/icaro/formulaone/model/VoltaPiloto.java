@@ -5,13 +5,11 @@ import java.time.LocalDateTime;
 import br.com.icaro.formulaone.utils.DateUtils;
 
 public class VoltaPiloto {
-    private String horaRegistradaVolta;
     private int codigoPiloto;
     private String nomePiloto;
     private int numeroVolta;
     private long tempoVolta;
     private float velocidadeMediaVolta;
-
 
     public int getCodigoPiloto() {
         return codigoPiloto;
@@ -19,14 +17,6 @@ public class VoltaPiloto {
 
     public void setCodigoPiloto(int codigoPiloto) {
         this.codigoPiloto = codigoPiloto;
-    }
-
-    public String getHoraRegistradaVolta() {
-        return horaRegistradaVolta;
-    }
-
-    public void setHoraRegistradaVolta(String horaRegistradaVolta) {
-        this.horaRegistradaVolta = horaRegistradaVolta;
     }
 
     public String getNomePiloto() {
@@ -60,12 +50,4 @@ public class VoltaPiloto {
     public void setTempoVolta(long tempoVolta) {
         this.tempoVolta = tempoVolta;
     }
-
-	@Override
-	public String toString() {
-		return "Hora Registrada da Volta=" + horaRegistradaVolta + ", Codigo do Piloto=" + codigoPiloto
-				+ ", Piloto=" + nomePiloto + ", Melhor Volta=" + numeroVolta + ", Tempo da Volta=" + DateUtils.millisecondEmMinuto(tempoVolta)
-				+ ", Velocidade Media da Volta=" + velocidadeMediaVolta;
-	}
-
 }
